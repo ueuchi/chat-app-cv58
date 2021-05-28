@@ -14,5 +14,10 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export const db = firebase.firestore();
-export default firebase;
+const auth = firebase.auth(); // これらはどのように使えるもの？
+const db = firebase.firestore(); // これらはどのように使えるもの？
+
+// export { firebase };
+// export default firebase; // との違いとは？
+
+export { firebase, auth, db }; //〇〇めてExport
