@@ -28,7 +28,7 @@
 
 上内さん
 吉村さん
-果糖さん
+加藤さん
 天達さん
 
 この Repository を Fork して,Clone して,develop brunch から作業用 brunch を切って（名前は`fixed-myname`のような作業内容が好ましい）作業して,Commit して Push して PR する.
