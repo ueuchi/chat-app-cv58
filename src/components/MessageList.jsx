@@ -9,6 +9,7 @@ const MessageList = () => {
       const data = querySnapshot.docs.map(doc => {
         const id = doc.id;
         return { id, ...doc.data() };
+        // return { id: id, ...doc.data() }; // との違いは？
       });
       console.log(data);
       setMessagesList(data);

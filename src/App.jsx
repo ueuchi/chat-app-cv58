@@ -23,6 +23,7 @@ function App() {
       <Auth>
         <Switch>
           <LoggedInRoute exact path='/' component={Room} />
+          {/* <LoggedInRoute exact path='/mypage' component={MyPage} /> */}
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
         </Switch>
