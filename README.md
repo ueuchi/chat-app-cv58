@@ -20,12 +20,15 @@
 - リロードするとログインページにとばされるのを直したい
 - メッセージを日付の順番に並べたい
 - 送信したら input を空にしたい
+- Login と Signup ページの Form を`EmailAndPasswordForm`という Component を作成し使いまわしたい
 
 この他に気になった点があれば,修正しても OK
 
 ## 課題の提出方法
 
-舌打ちさん
+上内さん
 吉村さん
 果糖さん
 天達さん
+
+この Repository を Fork して,Clone して,develop brunch から作業用 brunch を切って（名前は`fixed-myname`のような作業内容が好ましい）作業して,Commit して Push して PR する.
