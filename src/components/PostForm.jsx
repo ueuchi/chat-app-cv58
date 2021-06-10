@@ -27,6 +27,9 @@ const PostForm = () => {
   const handleClose = () => {
     setOpen(true);
   };
+  const emojiSelect = () => {
+    console.log(emoji)
+  }
 
   return (
     <>
@@ -39,8 +42,9 @@ const PostForm = () => {
       {open ? <button onClick={handleClickOpen}>絵文字表示</button>
        :
         <>
-          <button onClick={handleClose}>絵文字閉じる</button>
-          <Picker style={{ position: 'absolute', top: '0px', right: '40px' }} />
+          {/* <button onClick={handleClose}>絵文字閉じる</button> */}
+          <Picker onSelect={(emoji) => emojiSelect(emoji)} style={{ position: 'absolute', top: '0px', right: '40px' }} />
+          
         </>
       }
         {errors.content && <span style={{ color: 'tomato' }}>メッセージを入力してください</span>}
