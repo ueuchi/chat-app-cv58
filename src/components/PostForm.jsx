@@ -20,16 +20,24 @@ const PostForm = () => {
   };
 
   //絵文字
-  const [open, setOpen] = useState(true);
-  const handleClickOpen = () => {
-    setOpen(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedEmoji, setSelectedEmoji] = useState('');
+
+  const emojiSelect = (emoji) => {
+    console.log(emoji);
+    setSelectedEmoji(emoji.native);
+    setIsOpen(false);
   };
-  const handleClose = () => {
-    setOpen(true);
-  };
-  const emojiSelect = () => {
-    console.log(emoji)
-  }
+  // const [open, setOpen] = useState(true);
+  // const handleClickOpen = () => {
+  //   setOpen(false);
+  // };
+  // const handleClose = () => {
+  //   setOpen(true);
+  // };
+  // const emojiSelect = () => {
+  //   console.log(emoji)
+  // }
 
   return (
     <>
@@ -38,18 +46,13 @@ const PostForm = () => {
         {errors.name && <span style={{ color: 'tomato' }}>名前を入力してください</span>}
         <br />
         <input type='text' placeholder='message' {...register('content', { required: true })} />
-      {/* emoji */}
-      {open ? <button onClick={handleClickOpen}>絵文字表示</button>
-       :
-        <>
-          {/* <button onClick={handleClose}>絵文字閉じる</button> */}
-          <Picker onSelect={(emoji) => emojiSelect(emoji)} style={{ position: 'absolute', top: '0px', right: '40px' }} />
-          
-        </>
-      }
+        {/* emoji */}
+        <button onClick={() => setIsOpen(true)}>emoji</button>
+        {isOpen && <Picker onSelect={(emoji) => emojiSelect(emoji)} style={{ position: 'absolute', top: '0px', right: '40px' }} />}
+        {selectedEmoji}
         {errors.content && <span style={{ color: 'tomato' }}>メッセージを入力してください</span>}
         <br />
-        <input type="submit" />
+        {/* <input type="submit" /> */}
       </form>
 
     </>
