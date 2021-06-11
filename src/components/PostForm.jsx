@@ -47,7 +47,7 @@ const PostForm = () => {
         <br />
         <input type='text' placeholder='message' {...register('content', { required: true })} />
         {/* emoji */}
-        <button onClick={() => setIsOpen(true)}>emoji</button>
+        <button onClick={() => setIsOpen(true)}>aaaaaaemoji</button>
         {isOpen && <Picker onSelect={(emoji) => emojiSelect(emoji)} style={{ position: 'absolute', top: '0px', right: '40px' }} />}
         {selectedEmoji}
         {errors.content && <span style={{ color: 'tomato' }}>メッセージを入力してください</span>}
