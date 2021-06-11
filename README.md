@@ -27,7 +27,5 @@
 
 ## 課題の提出方法
 
-舌打ちさん
-芳村さん
-果糖さん
-天達さん
+この Repository を Fork して,Clone して,develop brunch から作業用 brunch を切って（名前は`fixed-myname`のような作業内容が好ましい）作業して,Commit して Push して PR する.
+修正する内容は上記の Issue から,取り組みたい順番に brunch を切って始める.
