@@ -8,11 +8,12 @@ import { Picker } from 'emoji-mart'
 import EditForm from "./EditForm"
 
 const PostForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const onSubmit = (data) => {
     // console.log(data);
     db.collection('posts').add({ ...data, sendAt: firebase.firestore.Timestamp.now() }).then(() => {
       console.log('投稿に成功');
+      reset();
     }).catch((error) => {
       console.log('投稿に失敗');
       console.log(error);
