@@ -25,9 +25,10 @@ const PostForm = () => {
   const [selectedEmoji, setSelectedEmoji] = useState('');
 
   const emojiSelect = (emoji) => {
-    console.log(emoji);
+    // console.log(emoji);
     setSelectedEmoji(emoji.native);
     setIsOpen(false);
+    console.log(errors.name)
   };
   // const [open, setOpen] = useState(true);
   // const handleClickOpen = () => {
@@ -49,11 +50,11 @@ const PostForm = () => {
         <input type='text' placeholder='message' {...register('content', { required: true })} />
         {/* emoji */}
         <button onClick={() => setIsOpen(true)}>emoji</button>
-        {isOpen && <Picker onSelect={(emoji) => emojiSelect(emoji)} style={{ position: 'absolute', top: '0px', right: '40px' }} />}
+        {isOpen ? <Picker onSelect={(emoji) => emojiSelect(emoji)} style={{ position: 'absolute', top: '0px', right: '40px' }} /> : console.log('a')}
         {selectedEmoji}
         {errors.content && <span style={{ color: 'tomato' }}>メッセージを入力してください</span>}
         <br />
-        {/* <input type="submit" /> */}
+        <input type="submit" />
       </form>
 
     </>
